@@ -1,14 +1,32 @@
+package pattern;
+
 import java.util.Arrays;
-// O(n)
+
+/**
+ * Used to find a subarray or substring that satisfies a specific condition by maintaining a window of elements
+ *
+ * Sample Problem:
+ * Find the maximum sum of a subarray of size k.
+ *
+ * Example:
+ * Input: nums = [2, 1, 5, 1, 3, 2], k = 3
+ * Output: 9
+ *
+ * Explanation:
+ * Start with the sum of the first k elements.
+ * Slide the window one element at a time, subtracting the element that goes out of the window and adding the new element.
+ * Keep track of the maximum sum encountered.
+ */
 public class WindowSliding {
 
   public static void main(String[] args) {
-//    int[] arr = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
-//    int max = getMaxSumOfSubArray(arr, 4);
+    int[] arr = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
+    int max = getMaxSumOfSubArray(arr, 4);
+    System.out.println(max);
 
-    String text = "forxxorfxdofr";
-    String word = "for";
-    System.out.print(countAnagrams(text, word));
+//    String text = "forxxorfxdofr";
+//    String word = "for";
+//    System.out.print(countAnagrams(text, word));
   }
 
   public static int getMaxSumOfSubArray(int[] array, int k) {
@@ -33,7 +51,7 @@ public class WindowSliding {
     /**
      * Input: text = gotxxotgxdogt, word = got
      * Output : 3
-     * Words “got,” “otg” and “ogt” are anagrams of “got.”
+     * Words “got,” “otg” and “ogt” are anagrams of “got”
      */
 
     // change CHARACTERS to support range of supported characters
