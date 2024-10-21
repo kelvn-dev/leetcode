@@ -1,6 +1,7 @@
 package pattern;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -24,6 +25,10 @@ public class MonotonicStack {
   public static void main(String[] args) {
     int[] array = new int[]{2, 1, 2, 4, 3};
     int[] result = findNextGreaterElement(array);
+
+//    int[] array = new int[]{1, 2, 3, 4};
+//    int[] subArray = new int[]{2, 4};
+//    int[] result = findNextGreaterElementI(array, subArray);
     for(int i: result) {
       System.out.println(i);
     }
@@ -49,6 +54,36 @@ public class MonotonicStack {
 
       // Push the current element to the stack
       stack.push(array[i]);
+    }
+
+    return result;
+  }
+
+  // bonus: https://leetcode.com/problems/next-greater-element-i/description/
+  public static int[] findNextGreaterElementI(int[] array, int[] subArray) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    Stack<Integer> stack = new Stack<>();  // Stack to store elements in decreasing order
+
+    // Traverse the array from right to left
+    for(int i = array.length - 1; i >= 0; --i) {
+
+      // Pop elements from the stack until we find a greater element or stack becomes empty
+      while (!stack.isEmpty() && array[i] >= stack.peek()) {
+        stack.pop();
+      }
+
+      // If the stack is not empty, the top is the next greater element
+      if (!stack.isEmpty()) {
+        map.put(array[i], stack.peek());
+      }
+
+      // Push the current element to the stack
+      stack.push(array[i]);
+    }
+
+    int[] result = new int[subArray.length];
+    for(int i = 0; i < subArray.length; i++) {
+      result[i] = map.getOrDefault(subArray[i], -1);
     }
 
     return result;
