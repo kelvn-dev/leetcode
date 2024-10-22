@@ -1,3 +1,5 @@
+package algorithm;
+
 public class Sorting {
   public static void main(String[] args) {
     int[] arr = new int[]{3, 4, 1, 2, 5};

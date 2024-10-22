@@ -1,11 +1,13 @@
+package algorithm;
+
+/**
+ * Applied for sorted array
+ */
 public class BinarySearch {
   public static void main(String[] args) {
-    int[] array = {1, 2, 4};
-//    int[] array = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
-    int position = search(array, 3);
-    int mid = 3 / 2;
-    System.out.println(mid);
-//    System.out.println(position);
+    int[] array = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
+    int position = search(array, 16);
+    System.out.println(position);
   }
 
   // O(log n)
