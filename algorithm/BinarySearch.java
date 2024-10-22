@@ -15,7 +15,7 @@ public class BinarySearch {
     int length = array.length;
     int left = 0;
     int right = length - 1;
-    while (left < right) {
+    while (left <= right) {
       int pivot = (right + left) / 2;
       if (array[pivot] == key) {
         return pivot;
