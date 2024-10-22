@@ -1,5 +1,16 @@
 package pattern;
 
+/**
+ * Sample Problem:
+ * Find an element in a rotated sorted array.
+ * Input: nums = [4, 5, 6, 7, 0, 1, 2], target = 0
+ * Output: 4
+ *
+ * Explanation:
+ * Perform binary search with an additional check to determine which half of the array is sorted.
+ * We then check if the target is within the range of the sorted half.
+ * If it is, we search that half; otherwise, we search the other half.
+ */
 public class ModifiedBinarySearch {
   public static void main(String[] args) {
     int[] array = {4, 5, 6, 7, 0, 1, 2};
