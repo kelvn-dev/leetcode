@@ -28,14 +28,14 @@ public class TopKElement {
   }
 
   public static int getTopKElementUsingHeap(int[] array, int k) {
-    PriorityQueue<Integer> minHeap = new PriorityQueue<>(k);
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
     for(int i: array) {
       minHeap.add(i);
       if (minHeap.size() > k) {
         minHeap.poll();
       }
     }
-    return minHeap.peek();
+    return Objects.isNull(minHeap.peek()) ? -1 : minHeap.peek();
   }
 
   /**
@@ -62,13 +62,13 @@ public class TopKElement {
   }
 
   public static int getIndexOfTopKElement(int[] array, int k) {
-    PriorityQueue<Integer[]> minHeap = new PriorityQueue<>(k, Comparator.comparingInt(o -> o[0]));
+    PriorityQueue<Integer[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(o -> o[0]));
     for(int i = 0; i < array.length; i++) {
       minHeap.add(new Integer[]{array[i], i});
       if (minHeap.size() > k) {
         minHeap.poll();
       }
     }
-    return Objects.isNull(minHeap) ? -1:  minHeap.peek()[1];
+    return Objects.isNull(minHeap.peek()) ? -1:  minHeap.peek()[1];
   }
 }
