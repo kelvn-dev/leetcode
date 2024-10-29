@@ -20,8 +20,8 @@ import java.util.Arrays;
 public class WindowSliding {
 
   public static void main(String[] args) {
-    int[] arr = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
-    int max = getMaxSumOfSubArray(arr, 4);
+    int[] arr = { 2, 1, 5, 1, 3, 2 };
+    int max = getMaxSumOfSubArray(arr, 3);
     System.out.println(max);
 
 //    String text = "forxxorfxdofr";
