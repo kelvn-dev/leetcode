@@ -45,6 +45,22 @@ public class BinarySearchTree {
     return search(root.right, data);
   }
 
+  public int sumOneChildNodes(NodeTree x) {
+    if(x == null) return 0;
+    return (((x.left == null && x.right != null) || (x.left != null && x.right == null)) ?
+            x.data : 0) + sumOneChildNodes(x.left) + sumOneChildNodes(x.right);
+  }
+
+  public int maxOfLevel(NodeTree x, int level){
+    if(x == null) {
+      return -1;
+    }
+    if(level == 0) {
+      return x.data;
+    }
+    return Math.max(maxOfLevel(x.left, level - 1), maxOfLevel(x.right, level - 1));
+  }
+
   public static void main(String[] args) {
     BinarySearchTree tree = new BinarySearchTree();
     tree.insert(50);
