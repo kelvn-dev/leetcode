@@ -1,3 +1,5 @@
+package datastructure;
+
 public class AVLTree {
 
   class Node {
