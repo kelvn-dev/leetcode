@@ -1,13 +1,14 @@
 import java.io.*;
+import java.util.*;
 
 public class Temp {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("./text.txt"));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
-        }
+        SortedSet<Integer> set = new TreeSet<>();
+        set.add(1);
+        set.add(1);
+        set.add(2);
 
+        set.forEach(System.out::println);
     }
 }
