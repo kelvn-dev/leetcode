@@ -1,46 +1,24 @@
 import java.io.*;
 import java.util.*;
 
-/**
- * Example:
- *  * Input: nums = [2, 1, 2, 4, 3]
- *  * Output: [4, 2, 4, -1, -1]
- */
 public class Temp {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        List<Integer> list = Arrays.asList(1, 2, 3);
-        for (int i = 0; i < list.size(); ++i) {
-            int item = list.get(i);
-            int num = item++ + ++item;
-            System.out.println(num);
-        }
-    }
+        Scanner scanner = new Scanner(System.in);
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        int count = 0;
 
-    public static int process(int[] nums, int k) {
-        int start = 0;
-        int end = nums.length - 1;
-        while (start <= end) {
-            int pivot = (start + end) / 2;
-            if (nums[pivot] == k) {
-                return pivot;
+        while (true) {
+            int num = scanner.nextInt();
+            if (num == -1) {
+                break;
             }
-
-            if (nums[start] < nums[pivot]) {
-                if (nums[start] <= k && k < nums[pivot]) {
-                    end = pivot - 1;
-                } else {
-                    start = pivot + 1;
-                }
-            } else {
-                if (nums[pivot] < k && k <= nums[end]) {
-                    start = pivot + 1;
-                } else {
-                    end = pivot - 1;
-                }
-            }
-
+            max = Math.max(max, num);
+            sum += num;
+            ++count;
         }
-        return -1;
+        double average = count != 0 ? (double) sum / count : 0;
+        System.out.print(max + " " + average);
     }
 }
