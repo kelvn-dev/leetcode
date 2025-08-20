@@ -3,8 +3,9 @@ package pattern;
 public class DynamicProgramming {
   public static void main(String[] args) {
 //    System.out.println(getFibonacci(6));
+    System.out.println(reverseInteger(13, 0));
 //    System.out.println(reverseInteger(12, 0));
-    System.out.println(getOccurrenceOfChar("abcdea", 'a'));
+//    System.out.println(getOccurrenceOfChar("abcdea", 'a'));
   }
 
   // 0, 1, 1, 2, 3, 5
@@ -15,6 +16,15 @@ public class DynamicProgramming {
     return getFibonacci(n - 1) + getFibonacci(n - 2);
   }
 
+  /**
+   *     int result = 0;
+   *     int count = 1;
+   *     for (int i = num; i > 0; i /= 2) {
+   *       result = i % 2 * count + result;
+   *       count *= 10;
+   *     }
+   *     return result;
+   */
   public static int getBinaryForm(int num) {
     if (num == 0) {
       return 0;
@@ -22,6 +32,15 @@ public class DynamicProgramming {
     return getBinaryForm(num / 2) * 10 + num % 2;
   }
 
+  /**
+   * public static int temp(int num) {
+   *     int result = 0;
+   *     for (int i = num; i > 0; i /= 10) {
+   *       result = result * 10 + i % 10;
+   *     }
+   *     return result;
+   *   }
+   */
   public static int reverseInteger(int num, int result) {
     if (num == 0) {
       return result;
