@@ -7,6 +7,11 @@ public class TrappingRainWater {
         System.out.println(result);
     }
 
+    /**
+     * 1. leftMaxArr[i] stores the maximum height from the start to index i.
+     * 2. rightMaxArr[i] stores the maximum height from index i to the end.
+     * 3. Iterate through heights and get trapped water by min(leftMaxArr[i], rightMaxArr[i]) - height[i]
+     */
     public static int trap(int[] height) {
         int n = height.length;
         if (n < 3) {

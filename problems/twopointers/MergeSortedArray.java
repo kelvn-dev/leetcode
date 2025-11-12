@@ -13,6 +13,12 @@ public class MergeSortedArray {
         }
     }
 
+    /**
+     * move backwards from the end of the arrays
+     * 1. Use index1 and index2 starting from the end of nums1 and nums2, and index from the very end of nums1
+     * 2. Compare and place the larger one at the index position
+     * 3. If any elements are left in nums2, copy them to nums1
+     */
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int index1 = m - 1;
         int index2 = n - 1;

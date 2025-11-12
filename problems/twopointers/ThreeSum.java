@@ -16,6 +16,14 @@ public class ThreeSum {
         // -4, -1, -1, 0, 1, 2
     }
 
+    /**
+     * 1. sort the array to avoid duplicates and allows the use of two pointers.
+     * For each iteration with index i, initialize two pointers: head at i+1 and tail at length-1
+     * If nums[i] + nums[head] + nums[tail]:
+     * = 0, add triplet to results and move both pointers, skipping duplicates.
+     * < 0, move left pointer to increase the sum.
+     * > 0, move the right pointer to decrease the sum.
+     */
     public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
