@@ -18,6 +18,8 @@ import java.util.*;
  * Iterate through the array, adding elements to the heap.
  * If the heap size exceeds k, remove the smallest element from the heap.
  * The root of the heap will be the k-th largest element.
+ *
+ * Note: min-heap (naturally ordered): root node must be the smallest
  */
 public class TopKElement {
   public static void main(String[] args) {
