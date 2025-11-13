@@ -11,6 +11,10 @@ public class SubarraySumEqualsK {
         System.out.println(result);
     }
 
+    /**
+     * prefix[j] - prefix[i] = k => prefix[j] - k = prefix[i]
+     * where prefix[i] is sum of previous elements => store the frequency of this and retrieve it
+     */
     public static int subarraySum(int[] nums, int k) {
         int sum = 0;
         int count = 0;
@@ -20,10 +24,6 @@ public class SubarraySumEqualsK {
         for (int num: nums) {
             sum += num;
 
-            /**
-             * prefix[j] - prefix[i] = k => prefix[j] - k = prefix[i]
-             * where prefix[i] is sum of previous elements => store the frequency of this and retrieve it
-             */
             if (map.containsKey(sum - k)) {
                 count += map.get(sum - k);
             }

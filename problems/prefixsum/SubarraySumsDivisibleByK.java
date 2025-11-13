@@ -4,12 +4,15 @@ import java.util.HashMap;
 
 public class SubarraySumsDivisibleByK {
     public static void main(String[] args) {
-        int[] nums = new int[] {-1, 3, 10};
+        int[] nums = new int[] {-1, 5, 3};
         int k = 3;
         int result = subarraysDivByK(nums, k);
         System.out.println(result);
     }
 
+    /**
+     * sum[0..i] get remainder 2, sum[0..j] must be sum[0..i] + number that % k == 0 to get the same remainder 2
+     */
     public static int subarraysDivByK(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
@@ -24,9 +27,6 @@ public class SubarraySumsDivisibleByK {
                 remainder += k;
             }
 
-            /**
-             * sum[0..i] get remainder 2, sum[0..j] must be sum[0..i] + number that % k == 0 to get the same remainder 2
-             */
             if (map.containsKey(remainder)) {
                 count += map.get(remainder);
             }
