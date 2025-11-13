@@ -44,7 +44,7 @@ public class OverlappingInterval {
 
       int[] lastInterval = merged.get(merged.size() - 1);
       if (lastInterval[1] >= i[0]) {
-        lastInterval[1] = i[1];
+        lastInterval[1] = Math.max(lastInterval[1], i[1]);
         merged.set(merged.size() - 1, lastInterval);
       } else {
         merged.add(i);
