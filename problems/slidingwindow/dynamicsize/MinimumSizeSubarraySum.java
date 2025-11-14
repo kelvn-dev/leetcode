@@ -8,6 +8,12 @@ public class MinimumSizeSubarraySum {
         System.out.println(result);
     }
 
+    /**
+     * For each iterating:
+     * 1. Keep calculating sum
+     * 2. If sum < target => continue
+     * 3. If sum >= target => try to subtract from left to get min length
+     */
     public static int minSubArrayLen(int target, int[] nums) {
         int left = 0;
         int sum = 0;

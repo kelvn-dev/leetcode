@@ -10,7 +10,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     /**
-     * Using StringBuilder
+     * Using StringBuilder, for each iterating:
+     * - before adding new character, check if this character already presented, compare StringBuilder's length and max, then remove until it
      */
     public static int lengthOfLongestSubstring(String s) {
         int max = 0;
@@ -28,25 +29,5 @@ public class LongestSubstringWithoutRepeatingCharacters {
         }
 
         return Math.max(max, stringBuilder.length());
-    }
-
-    /**
-     * Using HashMap
-     */
-    public static int lengthOfLongestSubstringUsingMap(String s) {
-        int n = s.length();
-        int maxLength = 0;
-        int i = 0;
-        Map<Character, Integer> map = new HashMap<>();
-
-        for (int j = 0; j < n; j++) {
-            if (map.containsKey(s.charAt(j))) {
-                maxLength = Math.max(maxLength, j - i);
-                i = Math.max(i, map.get(s.charAt(j)) + 1);
-            }
-            map.put(s.charAt(j), j);
-        }
-
-        return Math.max(maxLength, s.length() - i);
     }
 }

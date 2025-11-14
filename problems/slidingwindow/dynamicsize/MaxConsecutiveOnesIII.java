@@ -9,11 +9,13 @@ public class MaxConsecutiveOnesIII {
     }
 
     /**
-     * Simplified version
+     * For each iterating:
+     * 1. increment zeroCount if encountered
+     * 2. if zeroCount exceeds k, increment the left pointer until zeroCount is not more than k
      */
     public static int longestOnes(int[] nums, int k) {
         int left = 0;
-        int max = 0;
+        int maxLength = 0;
         int zeroCount = 0;
         for (int right = 0; right < nums.length; ++right) {
             if (nums[right] == 0) {
@@ -26,26 +28,9 @@ public class MaxConsecutiveOnesIII {
                 }
                 ++left;
             }
-            max = Math.max(max, right - left + 1);
+            maxLength = Math.max(maxLength, right - left + 1);
         }
 
-        return max;
-    }
-
-    public static int longestOnes1(int[] nums, int k) {
-        int left = 0;
-        int sum = 0;
-        int max = 0;
-
-        for (int right = 0; right < nums.length; ++right) {
-            sum += nums[right];
-            while (sum + k < right - left + 1) {
-                sum -= nums[left];
-                ++left;
-            }
-            max = Math.max(max, right - left + 1);
-        }
-
-        return max;
+        return maxLength;
     }
 }
