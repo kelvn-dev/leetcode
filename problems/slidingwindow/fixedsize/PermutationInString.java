@@ -13,8 +13,10 @@ public class PermutationInString {
             return false;
         }
 
-        char[] c1 = new char[26];
-        char[] c2 = new char[26];
+        // change CHARACTERS to support range of supported characters
+        int CHARACTERS = 26;
+        char[] c1 = new char[CHARACTERS];
+        char[] c2 = new char[CHARACTERS];
 
         for (int i = 0; i < s1.length(); ++i) {
             ++c1[s1.charAt(i) - 'a'];

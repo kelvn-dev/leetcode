@@ -11,6 +11,11 @@ public class MaximumSumofDistinctSubarraysWithLengthK {
         System.out.println(maximumSubarraySum(nums, k));
     }
 
+    /**
+     * Use HashSet to maintain distinct elements of current window. For each iterating:
+     * - Remove element from left until the newly added in distinct
+     * - After added, if set.size() == k, calculate sum
+     */
     public static long maximumSubarraySum(int[] nums, int k) {
         HashSet<Integer> set = new HashSet<>();
         int left = 0;
@@ -37,33 +42,6 @@ public class MaximumSumofDistinctSubarraysWithLengthK {
             }
         }
 
-        return max;
-    }
-
-    public static long maximumSubarraySumUsingMap(int[] nums, int k) {
-        long max = 0;
-        long sum = 0;
-        int left = 0;
-        int right = 0;
-        HashMap<Integer, Integer> numToIndex = new HashMap<>();
-
-        while (right < nums.length) {
-            int lastOccurrence = numToIndex.getOrDefault(nums[right], -1);
-            while (left <= lastOccurrence) {
-                sum -= nums[left];
-                ++left;
-            }
-
-            numToIndex.put(nums[right], right);
-            sum += nums[right];
-            ++right;
-
-            if (right - left == k) {
-                max = Math.max(max, sum);
-                sum -= nums[left];
-                ++left;
-            }
-        }
         return max;
     }
 }

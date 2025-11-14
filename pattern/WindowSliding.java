@@ -47,6 +47,11 @@ public class WindowSliding {
     return max;
   }
 
+  /**
+   * utilizing a fixed-size frequency count array textArray, for each iterating:
+   * - increase character frequency: ++textArr[CHARACTERS - text.charAt(i)]
+   * - decrease out-of-window character frequency: --textArr[CHARACTERS - text.charAt(i - wordLength)]
+   */
   public static int countAnagrams(String text, String word) {
     /**
      * Input: text = gotxxotgxdogt, word = got
@@ -68,9 +73,9 @@ public class WindowSliding {
     char[] wordArr = new char[CHARACTERS];
 
     // till window size
-    for (int i = 0; i < wordLength; i++) {
-      textArr[CHARACTERS - text.charAt(i)]++;
-      wordArr[CHARACTERS - word.charAt(i)]++;
+    for (int i = 0; i < wordLength; ++i) {
+      ++textArr[text.charAt(i) - 'a'];
+      ++wordArr[word.charAt(i) - 'a'];
     }
 
     if (Arrays.equals(wordArr, textArr)) {
@@ -79,8 +84,8 @@ public class WindowSliding {
 
     // next window
     for (int i = wordLength; i < textLength; i++) {
-      textArr[CHARACTERS - text.charAt(i)]++;
-      textArr[CHARACTERS - text.charAt(i - wordLength)]--;
+      ++textArr[text.charAt(i) - 'a'];
+      --textArr[text.charAt(i - wordLength) - 'a'];
 
       if (Arrays.equals(wordArr, textArr)) {
         count += 1;
