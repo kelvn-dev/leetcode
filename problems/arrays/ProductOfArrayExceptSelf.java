@@ -1,7 +1,7 @@
 package problems.arrays;
 
 /**
- * we can use two auxiliary arrays to store the product of all elements to the left and to the right of each index.
+ * we can use two arrays to store the product of all elements to the left and to the right of each index.
  * This way, we can construct the result array by multiplying the prefix and suffix products
  *
  * Create two arrays prefix and suffix, both of size n.
