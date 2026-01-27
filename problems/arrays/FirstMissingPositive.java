@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * Place each number at its correct index (i.e., number 1 at index 0, number 2 at index 1, etc.). Numbers out of this range can be ignored.
+ * Swap position so that nums[i] should be at index nums[i] - 1 (number 1 (nums[i]) at index 0 (nums[nums[i] - 1]))
  * Finally, the first place where the number is not equal to the index + 1 is the missing number.
  */
 public class FirstMissingPositive {

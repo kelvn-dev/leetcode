@@ -1,7 +1,7 @@
 package problems.arrays;
 
 /**
- * Formula is zeroCount * (zeroCount + 1) / 2
+ * Formula to find total subarray of consecutive zeros: zeroCount * (zeroCount + 1) / 2
  */
 public class NumberOfZeroFilledSubarrays {
     public static void main(String[] args) {

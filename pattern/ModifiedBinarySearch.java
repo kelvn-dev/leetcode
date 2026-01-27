@@ -22,7 +22,7 @@ public class ModifiedBinarySearch {
   public static int findElementInRotatedSortedArray(int[] array, int target) {
     int left = 0, right = array.length - 1;
     while (left <= right) {
-      int mid = (right + left) / 2;
+      int mid = left + (right - left) / 2;
       if (array[mid] == target) {
         return mid;
       }

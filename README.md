@@ -2,6 +2,12 @@
 ***
 ![](images/image.webp)
 
+# Note
+
+- Normal binary: left <= right
+- Modified binary: left < right
+- 2 pointer: left < right
+
 # Problems to learn by heart
 
 ## RotateArray
@@ -15,3 +21,6 @@ Steps:
 
 ![](images/RotateArray.png)
 
+## FindPeakElement & FindMinimumInRotatedSortedArray
+
+These 2 problems is contrasting
