@@ -4,8 +4,7 @@
 
 # Note
 
-- Normal binary: left <= right
-- Modified binary: left < right
+- binary: left <= right
 - 2 pointer: left < right
 
 # Problems to learn by heart

@@ -11,6 +11,10 @@ public class DailyTemperatures {
         }
     }
 
+    /**
+     * iterate right to left
+     * stack store numbers in ascending order: peek -> 1, 3, 5
+     */
     public static int[] dailyTemperatures(int[] temperatures) {
         int result[] = new int[temperatures.length];
         Stack<Integer> stack = new Stack<>();

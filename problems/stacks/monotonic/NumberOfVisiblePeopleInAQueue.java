@@ -11,6 +11,10 @@ public class NumberOfVisiblePeopleInAQueue {
         }
     }
 
+    /**
+     * iterate right to left
+     * stack store numbers in ascending order: peek -> 1, 3, 5
+     */
     public static int[] canSeePersonsCount(int[] heights) {
         int[] result = new int[heights.length];
         Stack<Integer> stack = new Stack<>();
