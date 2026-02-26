@@ -37,12 +37,13 @@ class MinStack {
 
     public static void main(String[] args) {
         MinStack minStack = new MinStack();
-        minStack.push(-2);
-        minStack.push(0);
-        minStack.push(-3);
-        minStack.getMin(); // return -3
+        minStack.push(2);
+        minStack.push(3);
+        minStack.push(1);
+        // head -> 1, 2, 3, 2
+        minStack.getMin(); // return 1
         minStack.pop();
-        minStack.top();    // return 0
-        minStack.getMin(); // return -2
+        minStack.top();    // return 3
+        minStack.getMin(); // return 2
     }
 }

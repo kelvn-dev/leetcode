@@ -1,7 +1,14 @@
+package systemdesign;
+
+import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
+/**
+ * The Problem with Traditional Hashing
+ * When adding or removing server
+ */
 public class ConsistentHashing {
     private final int numReplicas; // Number of virtual nodes per server
     private final TreeMap<Long, String> ring; // Hash ring storing virtual nodes
@@ -21,12 +28,13 @@ public class ConsistentHashing {
     private long hash(String key) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(key.getBytes());
+            md.update(key.getBytes()); // Feed key into MD5
             byte[] digest = md.digest();
-            return ((long) (digest[0] & 0xFF) << 24) |
-                    ((long) (digest[1] & 0xFF) << 16) |
-                    ((long) (digest[2] & 0xFF) << 8) |
-                    ((long) (digest[3] & 0xFF));
+            /**
+             * "& Long.MAX_VALUE" ensures the number is positive
+             * Math.abs(Long.MIN_VALUE) still returns a negative number due to overflow (-2^63 to 2^63 - 1)
+             */
+            return ByteBuffer.wrap(digest).getLong() & Long.MAX_VALUE;
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("MD5 algorithm not found", e);
         }
@@ -57,7 +65,7 @@ public class ConsistentHashing {
         long hash = hash(key);
         // Find the closest server in a clockwise direction
         Map.Entry<Long, String> entry = ring.ceilingEntry(hash);
-        if (entry == null) {
+        if (Objects.isNull(entry)) {
             // If we exceed the highest node, wrap around to the first node
             entry = ring.firstEntry();
         }
