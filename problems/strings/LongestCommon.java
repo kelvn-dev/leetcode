@@ -27,6 +27,15 @@ public class LongestCommon {
         return longestCommon.toString();
     }
 
+    /**
+     * init longestCommon as strs[0], for example abcd
+     * flow iteration to compare with strs[i]:
+     * - abcd
+     * - abc, bcd
+     * - ab, bc, cd
+     * - a, b, c, d
+     * If any step found substring, go to next i
+     */
     public static String longestCommonSubstring(String[] strs) {
         if (strs.length == 0) {
             return "";

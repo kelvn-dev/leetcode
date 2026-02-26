@@ -1,9 +1,7 @@
 package problems.arrays;
 
 /**
- * Instead of trying all possible pairs of buy and sell days, we can iterate through the list of prices once while
- * keeping track of the minimum price encountered so far. At each step, we calculate what the profit would be
- * if we sold at the current price, and update the maximum profit correspondingly.
+ * keeping track of the minimum price encountered so far and calculate benefit at each iteration
  */
 public class BestTimeToBuyAndSellStock {
     public static void main(String[] args) {

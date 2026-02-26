@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * https://neetcode.io/problems/longest-consecutive-sequence
+ * The elements do not have to be consecutive in the original array
  */
 public class LongestConsecutiveSequence {
     public static int longestConsecutive(int[] nums) {

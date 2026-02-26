@@ -16,11 +16,10 @@ public class IsSubsequence {
             return false;
         }
 
-        String temp = s;
         for (char c: t.toCharArray()) {
-            if (c == temp.charAt(0)) {
-                temp = temp.substring(1);
-                if (temp.isEmpty()) {
+            if (c == s.charAt(0)) {
+                s = s.substring(1);
+                if (s.isEmpty()) {
                     return true;
                 }
             }
