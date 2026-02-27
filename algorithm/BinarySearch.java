@@ -16,17 +16,17 @@ public class BinarySearch {
     int left = 0;
     int right = length - 1;
     while (left <= right) {
-      int pivot = (right + left) / 2;
-      if (array[pivot] == key) {
-        return pivot;
+      int mid = left + (right - left) / 2;
+      if (array[mid] == key) {
+        return mid;
       }
-      if (array[pivot] > key) {
-        right = pivot - 1;
+      if (array[mid] > key) {
+        right = mid - 1;
       }
       else {
-        left = pivot + 1;
+        left = mid + 1;
       }
     }
-    return -1;
+    return -1; // return left if find position to insert
   }
 }
