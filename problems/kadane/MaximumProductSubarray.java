@@ -1,5 +1,10 @@
 package problems.kadane;
 
+/**
+ * very small (negative) number can suddenly become the largest so need to track min number
+ * max = max(num, num * prevMax, num * prevMin)
+ * min = min(num, num * prevMax, num * prevMin)
+ */
 public class MaximumProductSubarray {
     public static void main(String[] args) {
         int[] nums = new int[] {-2,3,-4};

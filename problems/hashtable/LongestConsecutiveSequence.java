@@ -3,6 +3,9 @@ package problems.hashtable;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The elements do not have to be consecutive in the original array
+ */
 public class LongestConsecutiveSequence {
     public static void main(String[] args) {
         int[] nums = {1,0,1,2};
