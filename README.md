@@ -8,9 +8,13 @@
 - 2 pointer: left < right
 
 capacity for lowercase letters: 26
+
 capacity for digit: 10
+
 capacity for alphanumeric characters: 26 + 26 + 10
+
 capacity for standard ascii: 128
+
 capacity for extended ascii: 128 * 2
 
 # Problems to learn by heart
