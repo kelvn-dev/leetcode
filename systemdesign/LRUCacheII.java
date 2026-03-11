@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Combine HashMap with DoublyLinkedList if not allowed to use Doubly Linked List
+ * Combine HashMap with DoublyLinkedList if not allowed to use LinkedHashMap
  * head <-> most recent ... least recent <-> tail
  * even add or update, it's considered as most recently used
  */
