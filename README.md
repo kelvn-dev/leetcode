@@ -35,8 +35,10 @@ Steps:
 Steps:
 - Transpose (chuyển vị):
   - Draw a line down diagonal (Vẽ một đường chéo xuống)
+
     ![](images/RotateImage-diagonal.png)
   - Swap symmetrical elements ([i][j] -> [j][i])
+  
     ![](images/RotateImage-symmetrical-swap.png)
 - Reverse each row
 
