@@ -7,6 +7,8 @@
 - binary: left <= right
 - 2 pointer: left < right
 
+Formula to find total subarray of consecutive: count * (count + 1) / 2
+
 capacity for lowercase letters: 26
 
 capacity for digit: 10
@@ -16,6 +18,12 @@ capacity for alphanumeric characters: 26 + 26 + 10
 capacity for standard ascii: 128
 
 capacity for extended ascii: 128 * 2
+
+# Regex
+
+multiple space: \\s+
+
+digit: \\d+
 
 # Problems to learn by heart
 
@@ -45,3 +53,9 @@ Steps:
 ## FindPeakElement & FindMinimumInRotatedSortedArray
 
 These 2 problems is contrasting
+
+## Search2DMatrix
+
+tail = rowLength * columnLength - 1
+
+midValue = matrix[mid / columnLength][mid % columnLength]

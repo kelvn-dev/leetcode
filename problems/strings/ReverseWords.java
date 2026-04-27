@@ -16,7 +16,7 @@ public class ReverseWords {
             if (c == ' ') {
                 index = 0;
                 if (result.charAt(0) != ' ') {
-                    result.insert(0, c);
+                    result.insert(0, ' ');
                 }
                 continue;
             }

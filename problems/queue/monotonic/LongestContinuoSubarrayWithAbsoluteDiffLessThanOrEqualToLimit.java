@@ -10,10 +10,15 @@ public class LongestContinuoSubarrayWithAbsoluteDiffLessThanOrEqualToLimit {
         System.out.println(longestSubarray(nums, limit));
     }
 
+    /**
+     * addLast == add
+     * peekLast != peek
+     * removeLast != remove
+     */
     public static int longestSubarray(int[] nums, int limit) {
         int max = 0;
-        Deque<Integer> maxQueue = new ArrayDeque<>(); // 3, 2, 1
-        Deque<Integer> minQueue = new ArrayDeque<>(); // 1, 2, 3
+        Deque<Integer> maxQueue = new ArrayDeque<>(); // 1, 2, 3 <- head
+        Deque<Integer> minQueue = new ArrayDeque<>(); // 3, 2, 1 <- head
         int left = 0;
 
         for (int right = 0; right < nums.length; ++right) {
@@ -28,14 +33,14 @@ public class LongestContinuoSubarrayWithAbsoluteDiffLessThanOrEqualToLimit {
             }
             minQueue.addLast(right);
 
-            while (nums[maxQueue.peekFirst()] - nums[minQueue.peekFirst()] > limit) {
+            while (nums[maxQueue.peek()] - nums[minQueue.peek()] > limit) {
                 ++left;
-                if (maxQueue.peekFirst() < left) {
-                    maxQueue.removeFirst();
+                if (maxQueue.peek() < left) {
+                    maxQueue.remove();
                 }
 
-                if (minQueue.peekFirst() < left) {
-                    minQueue.removeFirst();
+                if (minQueue.peek() < left) {
+                    minQueue.remove();
                 }
             }
 

@@ -1,6 +1,8 @@
 package problems.arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Place each number at its correct index (i.e., number 1 at index 0, number 2 at index 1, etc.). Numbers out of this range can be ignored.
@@ -10,6 +12,7 @@ import java.util.Arrays;
 public class FirstMissingPositive {
     public static void main(String[] args) {
         int[] nums = new int[] {3,4,-1,1};
+        Map<Integer, Integer> map = new HashMap<>((int) 0.9f);
         int result = firstMissingPositive(nums);
         System.out.println(result);
     }
