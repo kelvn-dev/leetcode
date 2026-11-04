@@ -59,3 +59,5 @@ These 2 problems is contrasting
 tail = rowLength * columnLength - 1
 
 midValue = matrix[mid / columnLength][mid % columnLength]
+
+## LinkedListCycleII
